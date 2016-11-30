@@ -1,5 +1,4 @@
-# Correção do Menu iniciar via Powershell
+# CorreÃ§Ã£o do Menu iniciar via Powershell
 #
-# Pode ser executado copiando e colando!
 
 Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
