@@ -1,9 +1,9 @@
 # TI - Masters
-# Script Criado por Jo„o ¡tila Melo
-# Scritp para criar de forma r·pida maquinas virtuais
-# O Disco C:\ deve ter no minimo 200Gb de espaÁo livre
+# Script Criado por Jo√£o √Åtila Melo
+# Scritp para criar de forma r√°pida maquinas virtuais
+# O Disco C:\ deve ter no minimo 200Gb de espa√ßo livre
 # Todos os arquivos ISOS devem estar na pasta C:\ISOS
-# CriaÁ„o de vari·veis
+# Cria√ß√£o de vari√°veis
 $CLI1 = "01-CLI"					# Nome da VM Cliente
 $SRV1 = "01-SRV"					# Nome da VM Server
 $CRAM = 2GB				                # RAM da VM Cliente
@@ -20,7 +20,7 @@ $WSRVISO = "C:\ISOS\W2K12R2.iso"	        	# Windows Server 2012 R2 ISO
 MD $VMLOC -ErrorAction SilentlyContinue
 $TestSwitch = Get-VMSwitch -Name $NetworkSwitch1 -ErrorAction SilentlyContinue; if ($TestSwitch.Count -EQ 0){New-VMSwitch -Name $NetworkSwitch1 -SwitchType Private}
 
-# Criar M·quinas virtuais
+# Criar M√°quinas virtuais
 New-VM -Name $CLI1 -Path $VMLOC -MemoryStartupBytes $CRAM -NewVHDPath $VMLOC\$CLI1.vhdx -NewVHDSizeBytes $CLI1VHD -SwitchName $NetworkSwitch1
 New-VM -Name $SRV1 -Path $VMLOC -MemoryStartupBytes $SRAM -NewVHDPath $VMLOC\$SRV1.vhdx -NewVHDSizeBytes $SRV1VHD -SwitchName $NetworkSwitch1
 
